@@ -1,4 +1,36 @@
 const BOOKING_URL = 'https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG';
+
+// Keep motion progressive: content remains visible if the script or observer is unavailable.
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const motionTargets = document.querySelectorAll([
+    '.hero-copy', '.hero-visual', '.value-card', '.service-feature', '.doctor-card',
+    '.doctor-feature', '.review-grid article', '.appointment-card', '.question-box',
+    '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
+    '.article-list article', '.article-detail', '.related-articles', '.service-detail-intro',
+    '.visit-steps article', '.detail-overview-image', '.detail-final-cta'
+  ].join(','));
+
+  if (motionTargets.length) {
+    document.documentElement.classList.add('motion-ready');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+    motionTargets.forEach((element, index) => {
+      element.classList.add('reveal-item');
+      if (element.matches('.value-card, .doctor-card, .review-grid article, .contact-item, .blog-card, .article-list article')) {
+        element.classList.add('motion-card');
+      }
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`);
+      revealObserver.observe(element);
+    });
+  }
+}
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 menuButton?.addEventListener('click', () => {
