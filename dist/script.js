@@ -9,37 +9,55 @@ const motionTargetSelector = [
     '.review-grid article', '.appointment-card', '.question-box',
     '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
     '.article-list article', '.article-detail', '.related-articles', '.service-detail-intro',
-    '.visit-steps article', '.detail-overview-image', '.detail-final-cta'
+    '.visit-steps article', '.detail-overview-image', '.detail-final-cta', '.cta', '.about-cta',
+    '.blogs-cta', '.services-promo', '.service-detail-card', '.newsletter'
 ].join(',');
 
+let scrollMotionEnabled = false;
+let scrollMotionUpdate = null;
 function enableScrollMotion() {
-  if (!('IntersectionObserver' in window)) return;
+  if (scrollMotionEnabled) {
+    scrollMotionUpdate?.();
+    return;
+  }
   const motionTargets = document.querySelectorAll(motionTargetSelector);
   if (!motionTargets.length) return;
 
   document.documentElement.classList.add('motion-ready');
   const revealOrderByGroup = new Map();
-  const revealObserver = new IntersectionObserver(entries => {
-    entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-      .forEach(entry => {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      });
-  }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
-
   motionTargets.forEach(element => {
     element.classList.add('reveal-item');
     const group = element.closest('section, article') || element.parentElement;
     const groupOrder = revealOrderByGroup.get(group) || 0;
-    element.style.setProperty('--reveal-delay', `${Math.min(groupOrder, 3) * 220}ms`);
+    element.dataset.revealOrder = String(Math.min(groupOrder, 3));
     revealOrderByGroup.set(group, groupOrder + 1);
     if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
       element.classList.add('motion-card');
     }
-    revealObserver.observe(element);
   });
+
+  let animationFrame = 0;
+  const updateScrollReveals = () => {
+    animationFrame = 0;
+    const startLine = window.innerHeight * 0.92;
+    const centerLine = window.innerHeight * 0.48;
+    const revealDistance = startLine - centerLine;
+    motionTargets.forEach(element => {
+      const rect = element.getBoundingClientRect();
+      const staggerPixels = Number(element.dataset.revealOrder || 0) * 48;
+      const progress = Math.max(0, Math.min(1, (startLine - rect.top - staggerPixels) / revealDistance));
+      element.style.opacity = String(progress);
+      element.style.transform = `translateY(${(1 - progress) * 22}px)`;
+    });
+  };
+  const schedule = () => {
+    if (!animationFrame) animationFrame = requestAnimationFrame(updateScrollReveals);
+  };
+  scrollMotionEnabled = true;
+  scrollMotionUpdate = schedule;
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule, { passive: true });
+  updateScrollReveals();
 }
 if (!prefersReducedMotion) enableScrollMotion();
 
