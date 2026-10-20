@@ -1,0 +1,149 @@
+/* Global Smile Care: a calm, confident visual system for every page. */
+:root {
+  --ink: #20332e;
+  --muted: #687770;
+  --blue: #17634f;
+  --pale: #eff5f1;
+  --line: #dce7e0;
+  --clinic-forest: #155b49;
+  --clinic-mint: #72bea0;
+  --clinic-sage: #e8f1eb;
+  --clinic-paper: #fbfcfa;
+  --clinic-shadow: 0 16px 42px rgb(23 57 44 / 7%);
+}
+
+html { scroll-padding-top: 92px; }
+body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
+::selection { background: #cfe8da; color: #153d32; }
+:focus-visible { outline: 3px solid #72bea0; outline-offset: 4px; }
+.container { width: min(1220px, calc(100% - 56px)); }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 78px;
+  border-bottom: 1px solid rgb(220 231 224 / 70%);
+  background: rgb(251 252 250 / 94%);
+  backdrop-filter: blur(14px);
+}
+.brand-logo { width: 148px; }
+.nav { gap: 30px; color: #344840; font-size: 13px; }
+.nav a:not(.pill) { transition: color .18s ease; }
+.nav a:not(.pill):hover, .nav a.active { color: var(--clinic-forest); }
+.pill { background: #e7f1eb; color: var(--clinic-forest); transition: background .18s ease, color .18s ease; }
+.pill:hover { background: var(--clinic-forest); color: #fff; }
+.button { background: var(--clinic-forest); color: #fff; box-shadow: 0 7px 17px rgb(21 91 73 / 15%); }
+.button:hover { background: #104b3c; }
+.eyebrow { background: #e8f2ec; color: #276b54; }
+.hero { min-height: 620px; padding-top: 38px; }
+.hero-copy { max-width: 545px; }
+.hero h1 { max-width: 680px; color: #1d302b; font-size: clamp(46px, 4.5vw, 64px); font-weight: 500; line-height: 1.04; }
+.hero h1 em { color: #317a60; }
+.hero p { color: #61716a; line-height: 1.7; }
+.hero-visual { min-height: 550px; height: min(45vw, 590px); border-radius: 20px 20px 76px 20px; background-color: #e5eee8; }
+.asset-slot { background-color: #e5eee8; }
+.hero-tags span { box-shadow: 0 8px 24px rgb(30 53 43 / 10%); }
+.hero-tags b { color: #317a60; }
+.soft { background: var(--clinic-sage); }
+.band { padding-block: 82px; }
+.section { padding-block: 88px; }
+.excellence h2, .section h2, .faq h2, .contact h2 { color: #1d302b; font-weight: 500; }
+.value-card, .review-grid article, .appointment-card, .question-box { border: 1px solid var(--line); box-shadow: 0 8px 26px rgb(29 57 44 / 4%); }
+.value-card, .review-grid article { border-radius: 15px; }
+.icon.gold, .contact-item:last-child > span { background: #e7f2ec; color: #317a60; }
+.icon.green, .contact-item > span, .icon.blue { background: #e3f0e8; color: #286b53; }
+.service-tabs button[aria-selected="true"], .blog-filters button.selected, .blog-filters button:hover { background: #e7f1eb; border-color: #c7ddd0; color: var(--clinic-forest); }
+.service-tabs a, .book-link, .article-cta { color: var(--clinic-forest); }
+.service-feature { border: 1px solid var(--line); border-radius: 17px; }
+.service-image { border-radius: 13px; }
+.mini-avatar { background: #dcebe2; color: #286b53; }
+.clinic-value-card .clinic-value-icon, .clinic-service-icon, .clinic-value-icon { background: #e7f1eb; color: #317a60; }
+.arrow { background: #e7f1eb; color: var(--clinic-forest); }
+.arrow:hover { background: var(--clinic-forest); color: #fff; }
+.doctor-card, .clinic-about-card { background: #eef3ef; border-radius: 15px; }
+.review-grid { gap: 16px; margin-top: 38px; }
+.review-grid article { min-height: 220px; }
+.review-grid strong, .review-grid article:nth-child(n+2) strong { color: #438368; }
+.review-grid p { color: #586960; }
+.article-image, .thumb { border-radius: 14px; }
+.article-list article { border-color: var(--line); }
+.faq-list details { border-color: var(--line); }
+.faq-list summary:after { color: var(--clinic-forest); }
+.cta { border-radius: 18px 18px 62px 18px; background-color: #183c32; }
+.contact-grid { gap: 72px; }
+.contact-item { border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 4px 16px rgb(29 57 44 / 4%); }
+.appointment-card { border-radius: 16px; padding: 34px; }
+.appointment-card input { border-color: #d8e4dc; }
+.appointment-card input:focus { outline: 2px solid #8bc8a9; outline-offset: 1px; }
+.footer { background: #173b31; }
+.newsletter { border-color: rgb(255 255 255 / 14%); }
+.newsletter .eyebrow { background: rgb(255 255 255 / 12%); color: #d9e9df; }
+.newsletter input { background: #244a3f; }
+.footer-links a:not(.brand) { color: #d1ddd6; }
+.footer-bottom { border-color: rgb(255 255 255 / 14%); color: #b3c3ba; }
+
+/* Inner pages use the same palette while retaining their own Figma imagery. */
+.about-page { --about-blue: var(--clinic-forest); --about-ink: var(--ink); --about-muted: var(--muted); }
+.about-page .breadcrumbs, .doctors-page .breadcrumbs { color: var(--muted); }
+.about-page .modern-card { border-radius: 17px 17px 58px 17px; }
+.about-page .about-value { border-color: var(--line); background: #f4f8f5; }
+.about-page .value-symbol { background: #e4f0e8; color: #347a5f; }
+.about-page .value-symbol.comfort { background: #e7f1eb; color: #347a5f; }
+.about-page .about-cta { background-color: #173b31; }
+.about-page .about-faq, .doctors-page .doctors-contact { background: var(--clinic-sage); }
+.blogs-page { --blog-ink: var(--ink); --blog-muted: var(--muted); }
+.blogs-page .blog-search { border-color: var(--line); color: var(--clinic-forest); }
+.blogs-page .blog-filters button { border-color: var(--line); color: #52635b; }
+.blogs-page .blog-filters button.selected { border-color: #c7ddd0; }
+.blogs-page .blog-card, .blogs-page .blog-card-feature { border-color: var(--line); box-shadow: 0 10px 30px rgb(29 57 44 / 5%); }
+.blogs-page .blogs-cta { background-color: #173b31; }
+.blog-details-page .article-breadcrumbs a, .blog-details-page .article-category { color: var(--clinic-forest); }
+.blog-details-page .article-category { background: #e7f1eb; }
+.blog-details-page .article-detail h1, .blog-details-page .article-content h2 { color: var(--ink); }
+.blog-details-page .article-content { color: #4f6058; }
+.blog-details-page .article-help, .blog-details-page .related-articles { border-color: var(--line); background: #f3f7f4; }
+.blog-details-page .author-mark { background: var(--clinic-forest); }
+.blog-details-page .back-to-blogs, .blog-details-page .related-articles > a:hover span { color: var(--clinic-forest); }
+.doctors-page { --doc-blue: var(--clinic-forest); --doc-ink: var(--ink); --doc-muted: var(--muted); }
+.doctors-page .doctor-feature { background: var(--clinic-forest); border-radius: 16px 16px 42px 16px; }
+.doctors-page .doctor-feature .button { color: var(--clinic-forest); box-shadow: none; }
+.doctors-page .doctor-image { border-radius: 14px; background: #eaf1ec; }
+.doctors-page .doctor-caption > a { background: #e7f1eb; color: var(--clinic-forest); }
+.doctors-page .contact-item { border-color: var(--line); box-shadow: 0 5px 18px rgb(29 57 44 / 5%); }
+.doctors-page .contact-item > span:first-child, .doctors-page .contact-item:nth-of-type(3) > span:first-child { background: #e5f0e9; color: #317a60; }
+.services-page .service-catalog { background: #f0f5f1; }
+.services-page .services-promo-image { border-radius: 16px 16px 52px 16px; }
+.service-detail-page .satisfaction-card { box-shadow: 0 16px 38px rgb(23 57 44 / 14%); }
+.service-detail-page .satisfaction-pill { background: var(--clinic-forest); box-shadow: none; }
+.service-detail-page .satisfaction-card:before { background: #e7f1eb; }
+.service-detail-page .detail-overview-image { border-radius: 17px 17px 58px 17px; }
+.service-detail-page .visit-steps article { border-color: var(--line); border-radius: 14px; }
+.service-detail-page .visit-steps article > span, .service-detail-page .detail-points li span { background: #e5f0e9; color: #317a60; }
+.service-detail-page .detail-final-cta { border-radius: 18px 18px 58px 18px; background-image: linear-gradient(90deg, rgb(16 56 43 / 92%) 0%, rgb(16 56 43 / 68%) 48%, rgb(16 56 43 / 14%) 100%), url('assets/appointment-banner-figma.webp'); }
+
+@media (max-width: 850px) {
+  .container { width: min(100% - 40px, 700px); }
+  .site-header { height: 72px; }
+  .hero { min-height: 0; padding-block: 42px 58px; }
+  .hero-visual { height: 56vw; min-height: 340px; border-radius: 16px 16px 50px 16px; }
+  .band, .section { padding-block: 66px; }
+  .contact-grid { gap: 38px; }
+}
+@media (max-width: 600px) {
+  .container { width: calc(100% - 36px); }
+  .site-header { height: 68px; }
+  .brand-logo { width: 126px; }
+  .nav { background: var(--clinic-paper); border-bottom: 1px solid var(--line); box-shadow: var(--clinic-shadow); }
+  .hero { padding-top: 30px; }
+  .hero h1 { font-size: clamp(42px, 11vw, 54px); }
+  .hero p { font-size: 15px; }
+  .hero-visual { min-height: 300px; border-radius: 14px 14px 42px 14px; }
+  .band, .section { padding-block: 52px; }
+  .value-card, .appointment-card { border-radius: 13px; }
+  .appointment-card { padding: 24px; }
+  .cta, .about-page .about-cta, .blogs-page .blogs-cta { border-radius: 14px 14px 42px 14px; }
+  .footer { padding-inline: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
