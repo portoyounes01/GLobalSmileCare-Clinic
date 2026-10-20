@@ -18,6 +18,12 @@ const services = {
   dentures: ['Tandprotheses', 'U kunt bij ons terecht voor een tandprothese of volledig kunstgebit.', BOOKING_URL, 'Afspraak maken'],
   fillings: ['Gaatjes vullen', 'Als we een gaatje vinden, vullen we dit wanneer dat mogelijk is.', BOOKING_URL, 'Afspraak maken']
 };
+const serviceIcons = {
+  checkups: 'checkup',
+  whitening: 'whitening',
+  dentures: 'denture',
+  fillings: 'filling'
+};
 document.querySelectorAll('[data-service]').forEach(tab => tab.addEventListener('click', () => {
   document.querySelectorAll('[data-service]').forEach(item => item.setAttribute('aria-selected', String(item === tab)));
   const service = services[tab.dataset.service];
@@ -27,6 +33,12 @@ document.querySelectorAll('[data-service]').forEach(tab => tab.addEventListener(
   const serviceDescription = document.querySelector('#service-description');
   if (serviceTitle) serviceTitle.textContent = title;
   if (serviceDescription) serviceDescription.textContent = description;
+  const serviceIcon = document.querySelector('#service-icon');
+  const iconName = serviceIcons[tab.dataset.service];
+  if (serviceIcon && iconName) {
+    serviceIcon.className = `icon blue icon-${iconName}`;
+    serviceIcon.querySelector('use')?.setAttribute('href', `assets/icons.svg#icon-${iconName}`);
+  }
   const serviceAction = document.querySelector('.service-card-actions .button');
   if (serviceAction) {
     serviceAction.href = destination;

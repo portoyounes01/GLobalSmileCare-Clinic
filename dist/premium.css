@@ -52,6 +52,14 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
 .value-card, .review-grid article { border-radius: 15px; }
 .icon.gold, .contact-item:last-child > span:first-child { background: #e7f2ec; color: #317a60; }
 .icon.green, .contact-item > span:first-child, .icon.blue { background: #e3f0e8; color: #286b53; }
+.icon svg, .contact-icon svg, .clinic-value-icon svg, .clinic-service-icon svg, .value-symbol svg, .mini-avatar svg { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.clinic-value-icon svg, .clinic-service-icon svg { width: 58px; height: 58px; stroke-width: 1.45; }
+.contact-icon { display: grid !important; place-items: center; }
+.value-symbol svg { width: 20px; height: 20px; }
+.mini-avatar svg { width: 19px; height: 19px; }
+.form-icon svg { display: block; width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.blog-search-icon svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.review-grid strong svg { display: block; width: 38px; height: 38px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .service-tabs button[aria-selected="true"], .blog-filters button.selected, .blog-filters button:hover { background: #e7f1eb; border-color: #c7ddd0; color: var(--clinic-forest); }
 .service-tabs a, .book-link, .article-cta { color: var(--clinic-forest); }
 .service-feature { border: 1px solid var(--line); border-radius: 17px; }
