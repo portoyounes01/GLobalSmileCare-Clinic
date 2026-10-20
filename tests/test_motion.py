@@ -33,6 +33,16 @@ class MotionTests(unittest.TestCase):
         self.assertNotIn("if (!prefersReducedMotion) {\n  const replayMotion", script)
         self.assertIn(".motion-preview .hero-copy", css)
         self.assertIn("animation: hero-enter 850ms", css)
+        self.assertIn(".motion-preview .reveal-item.is-visible", css)
+        self.assertIn("enableScrollMotion();", script)
+
+    def test_scroll_reveals_are_staggered_as_targets_enter_the_view(self):
+        script = (ROOT / "script.js").read_text()
+        css = (ROOT / "premium.css").read_text()
+        self.assertIn("main > section:not(.hero)", script)
+        self.assertIn(".sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)", script)
+        self.assertIn("Math.min(index, 5) * 180", script)
+        self.assertIn("transition: opacity 900ms", css)
 
 
 if __name__ == "__main__":

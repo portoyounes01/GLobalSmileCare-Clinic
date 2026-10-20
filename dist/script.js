@@ -2,36 +2,42 @@ const BOOKING_URL = 'https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG';
 
 // Keep motion progressive: content remains visible if the script or observer is unavailable.
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-  const motionTargets = document.querySelectorAll([
+const motionTargetSelector = [
+    'main > section:not(.hero)',
     '.hero-copy', '.hero-visual', '.value-card', '.service-feature', '.doctor-card',
     '.doctor-feature', '.clinic-about-card', '.clinic-value-card', '.clinic-service-card',
     '.review-grid article', '.appointment-card', '.question-box',
     '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
     '.article-list article', '.article-detail', '.related-articles', '.service-detail-intro',
     '.visit-steps article', '.detail-overview-image', '.detail-final-cta'
-  ].join(','));
+].join(',');
 
-  if (motionTargets.length) {
-    document.documentElement.classList.add('motion-ready');
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+function enableScrollMotion() {
+  if (!('IntersectionObserver' in window)) return;
+  const motionTargets = document.querySelectorAll(motionTargetSelector);
+  if (!motionTargets.length) return;
+
+  document.documentElement.classList.add('motion-ready');
+  const revealObserver = new IntersectionObserver(entries => {
+    entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+      .forEach((entry, index) => {
+        entry.target.style.setProperty('--reveal-delay', `${Math.min(index, 5) * 180}ms`);
         entry.target.classList.add('is-visible');
         revealObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+  }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
 
-    motionTargets.forEach((element, index) => {
-      element.classList.add('reveal-item');
-      if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
-        element.classList.add('motion-card');
-      }
-      element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`);
-      revealObserver.observe(element);
-    });
-  }
+  motionTargets.forEach(element => {
+    element.classList.add('reveal-item');
+    if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
+      element.classList.add('motion-card');
+    }
+    revealObserver.observe(element);
+  });
 }
+if (!prefersReducedMotion) enableScrollMotion();
 
 // Users can explicitly preview the hero animation, including when system motion is reduced.
 const replayMotion = document.createElement('button');
@@ -44,11 +50,7 @@ replayMotion.addEventListener('click', () => {
   void document.documentElement.offsetWidth;
   document.documentElement.classList.add('motion-preview');
   document.querySelectorAll('.reveal-item').forEach(element => element.classList.remove('is-visible'));
-  requestAnimationFrame(() => {
-    document.querySelectorAll('.reveal-item').forEach(element => {
-      if (element.getBoundingClientRect().top < window.innerHeight) element.classList.add('is-visible');
-    });
-  });
+  enableScrollMotion();
 });
 document.body.append(replayMotion);
 const menuButton = document.querySelector('.menu-toggle');
