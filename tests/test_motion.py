@@ -39,12 +39,13 @@ class MotionTests(unittest.TestCase):
     def test_scroll_reveals_are_staggered_as_targets_enter_the_view(self):
         script = (ROOT / "script.js").read_text()
         css = (ROOT / "premium.css").read_text()
-        self.assertIn("main > section:not(.hero)", script)
+        self.assertIn(".faq-list details", script)
         self.assertIn("const revealOrderByGroup = new Map()", script)
-        self.assertIn("Math.min(groupOrder, 4) * 300", script)
-        self.assertIn("clip-path: inset(100% 0 0)", css)
-        self.assertIn("transition: opacity 1300ms", css)
-        self.assertIn("transition-duration: 1300ms !important", css)
+        self.assertIn("Math.min(groupOrder, 3) * 220", script)
+        self.assertIn(".motion-ready .reveal-item", css)
+        self.assertNotIn("clip-path: inset(100% 0 0)", css)
+        self.assertIn("transition: opacity 1100ms", css)
+        self.assertIn("transition-duration: 1100ms !important", css)
 
 
 if __name__ == "__main__":

@@ -3,8 +3,8 @@ const BOOKING_URL = 'https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG';
 // Keep motion progressive: content remains visible if the script or observer is unavailable.
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const motionTargetSelector = [
-    'main > section:not(.hero)',
-    '.hero-copy', '.hero-visual', '.value-card', '.service-feature', '.doctor-card',
+    '.hero-copy', '.hero-visual', '.section-heading', '.faq-grid > div', '.faq-list details',
+    '.services > .eyebrow', '.services > h2', '.services > .section-lead', '.value-card', '.service-feature', '.doctor-card',
     '.doctor-feature', '.clinic-about-card', '.clinic-value-card', '.clinic-service-card',
     '.review-grid article', '.appointment-card', '.question-box',
     '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
@@ -27,13 +27,13 @@ function enableScrollMotion() {
         entry.target.classList.add('is-visible');
         revealObserver.unobserve(entry.target);
       });
-  }, { threshold: 0.01, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
 
   motionTargets.forEach(element => {
     element.classList.add('reveal-item');
     const group = element.closest('section, article') || element.parentElement;
     const groupOrder = revealOrderByGroup.get(group) || 0;
-    element.style.setProperty('--reveal-delay', `${Math.min(groupOrder, 4) * 300}ms`);
+    element.style.setProperty('--reveal-delay', `${Math.min(groupOrder, 3) * 220}ms`);
     revealOrderByGroup.set(group, groupOrder + 1);
     if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
       element.classList.add('motion-card');
