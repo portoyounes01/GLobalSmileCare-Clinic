@@ -1,7 +1,6 @@
 const BOOKING_URL = 'https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG';
 
 // Keep motion progressive: content remains visible if the script or observer is unavailable.
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const motionTargetSelector = [
     '.hero-copy', '.hero-visual', '.section-heading', '.faq-grid > div', '.faq-list details',
     '.services > .eyebrow', '.services > h2', '.services > .section-lead', '.value-card', '.service-feature', '.doctor-card',
@@ -64,22 +63,7 @@ function enableScrollMotion() {
   window.addEventListener('resize', schedule, { passive: true });
   updateScrollReveals();
 }
-if (!prefersReducedMotion) enableScrollMotion();
-
-// Users can explicitly preview the hero animation, including when system motion is reduced.
-const replayMotion = document.createElement('button');
-replayMotion.type = 'button';
-replayMotion.className = 'motion-replay';
-replayMotion.textContent = 'Animatie afspelen ↻';
-replayMotion.setAttribute('aria-label', 'Animatie afspelen');
-replayMotion.addEventListener('click', () => {
-  document.documentElement.classList.remove('motion-preview');
-  void document.documentElement.offsetWidth;
-  document.documentElement.classList.add('motion-preview');
-  document.querySelectorAll('.reveal-item').forEach(element => element.classList.remove('is-visible'));
-  enableScrollMotion();
-});
-document.body.append(replayMotion);
+enableScrollMotion();
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 menuButton?.addEventListener('click', () => {

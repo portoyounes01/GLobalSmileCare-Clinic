@@ -160,33 +160,14 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .motion-ready .hero-copy { animation: hero-enter 850ms cubic-bezier(.2, .65, .3, 1) both; }
-  .motion-ready .hero-visual { animation: hero-enter 1050ms cubic-bezier(.2, .65, .3, 1) 120ms both; }
-  .motion-ready .reveal-item { will-change: opacity, transform; }
-}
+ .motion-ready .hero-copy { animation: hero-enter 850ms cubic-bezier(.2, .65, .3, 1) both; }
+ .motion-ready .hero-visual { animation: hero-enter 1050ms cubic-bezier(.2, .65, .3, 1) 120ms both; }
+ .motion-ready .reveal-item { will-change: opacity, transform; }
 
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+@media (hover: hover) {
   .motion-card { transition: transform 280ms ease, box-shadow 280ms ease, filter 280ms ease; }
   .motion-card:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgb(29 57 44 / 11%); filter: saturate(1.04); }
 }
-
-.motion-replay {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 40;
-  padding: 10px 14px;
-  border: 1px solid #c6ded0;
-  border-radius: 999px;
-  background: #fff;
-  color: #155b49;
-  font: 600 12px/1.2 'DM Sans', Arial, sans-serif;
-  box-shadow: 0 5px 18px rgb(29 57 44 / 12%);
-  cursor: pointer;
-}
-.motion-replay:hover { background: #e7f1eb; }
-.motion-replay:active { transform: scale(.96); }
 
 @media (max-width: 850px) {
   .container { width: min(100% - 40px, 700px); }
@@ -217,15 +198,4 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
   .footer-brand p, .footer-links a:not(.brand), .footer-bottom, .newsletter p { color: #c1cec6; }
   .cta, .about-page .about-cta, .blogs-page .blogs-cta { border-radius: 14px 14px 42px 14px; }
   .footer { padding-inline: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .motion-ready .reveal-item { opacity: 1; transform: none; transition: none; }
-}
-
-/* Explicit user action opts into a short preview while default reduced motion remains respected. */
-@media (prefers-reduced-motion: reduce) {
-  .motion-preview .hero-copy { animation: hero-enter 850ms cubic-bezier(.2, .65, .3, 1) both !important; }
-  .motion-preview .hero-visual { animation: hero-enter 1050ms cubic-bezier(.2, .65, .3, 1) 120ms both !important; }
-  .motion-preview .reveal-item { will-change: opacity, transform; }
 }
