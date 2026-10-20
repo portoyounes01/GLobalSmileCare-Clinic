@@ -27,8 +27,11 @@ class MotionTests(unittest.TestCase):
     def test_hero_has_a_visible_entry_motion_and_load_fallback(self):
         script = (ROOT / "script.js").read_text()
         css = (ROOT / "premium.css").read_text()
-        self.assertIn(".hero-copy', '.hero-visual", script)
+        targets = script.split("const motionTargetSelector = [", 1)[1].split("].join(',');", 1)[0]
+        self.assertNotIn(".hero-copy", targets)
+        self.assertNotIn(".hero-visual", targets)
         self.assertIn(".motion-ready .hero-copy { animation: hero-enter 850ms", css)
+        self.assertIn(".motion-ready .hero-visual { animation: hero-enter 1050ms", css)
         self.assertIn("@keyframes hero-enter", css)
         self.assertIn(".motion-ready .hero-copy { animation: hero-enter 850ms", css)
         self.assertNotIn("motion-replay", script + css)

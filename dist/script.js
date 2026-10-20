@@ -2,7 +2,7 @@ const BOOKING_URL = 'https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG';
 
 // Keep motion progressive: content remains visible if the script or observer is unavailable.
 const motionTargetSelector = [
-    '.hero-copy', '.hero-visual', '.section-heading', '.faq-grid > div', '.faq-list details',
+    '.section-heading', '.faq-grid > div', '.faq-list details',
     '.services > .eyebrow', '.services > h2', '.services > .section-lead', '.value-card', '.service-feature', '.doctor-card',
     '.doctor-feature', '.clinic-about-card', '.clinic-value-card', '.clinic-service-card',
     '.review-grid article', '.appointment-card', '.question-box',
