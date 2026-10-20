@@ -32,6 +32,25 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     });
   }
 }
+
+// Users can explicitly preview the hero animation, including when system motion is reduced.
+const replayMotion = document.createElement('button');
+replayMotion.type = 'button';
+replayMotion.className = 'motion-replay';
+replayMotion.textContent = 'Animatie afspelen ↻';
+replayMotion.setAttribute('aria-label', 'Animatie afspelen');
+replayMotion.addEventListener('click', () => {
+  document.documentElement.classList.remove('motion-preview');
+  void document.documentElement.offsetWidth;
+  document.documentElement.classList.add('motion-preview');
+  document.querySelectorAll('.reveal-item').forEach(element => element.classList.remove('is-visible'));
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal-item').forEach(element => {
+      if (element.getBoundingClientRect().top < window.innerHeight) element.classList.add('is-visible');
+    });
+  });
+});
+document.body.append(replayMotion);
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 menuButton?.addEventListener('click', () => {

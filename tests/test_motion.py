@@ -26,9 +26,13 @@ class MotionTests(unittest.TestCase):
         script = (ROOT / "script.js").read_text()
         css = (ROOT / "premium.css").read_text()
         self.assertIn(".hero-copy', '.hero-visual", script)
-        self.assertIn("animation: hero-enter 850ms", css)
+        self.assertIn(".motion-ready .hero-copy { animation: hero-enter 850ms", css)
+        self.assertIn("@media (prefers-reduced-motion: no-preference) {\n  .motion-ready .hero-copy", css)
         self.assertIn("@keyframes hero-enter", css)
-        self.assertIn("animation: none", css)
+        self.assertIn("motion-replay", script)
+        self.assertNotIn("if (!prefersReducedMotion) {\n  const replayMotion", script)
+        self.assertIn(".motion-preview .hero-copy", css)
+        self.assertIn("animation: hero-enter 850ms", css)
 
 
 if __name__ == "__main__":
