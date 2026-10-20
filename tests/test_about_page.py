@@ -29,8 +29,8 @@ class AboutPageTests(unittest.TestCase):
         html = page.read_text()
         css = (ROOT / "about.css").read_text()
         for asset in (
-            "doctor-1-figma.png", "doctor-2-figma.png", "doctor-3-figma.png",
-            "doctor-4-figma.png", "appointment-banner-figma.png",
+            "doctor-1-figma.webp", "doctor-2-figma.webp", "doctor-3-figma.webp",
+            "doctor-4-figma.webp", "appointment-banner-figma.webp",
         ):
             self.assertTrue((ROOT / "assets" / asset).is_file(), asset)
             self.assertIn(asset, html + css)

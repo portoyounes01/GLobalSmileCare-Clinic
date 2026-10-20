@@ -21,9 +21,9 @@ class ServiceDetailPageTests(unittest.TestCase):
         self.assertTrue(detail.is_file(), "service detail route should exist")
         html = detail.read_text()
         self.assertIn("Teeth Cleaning &amp; Dental Checkups", html)
-        self.assertTrue((ROOT / "assets" / "service-detail-hero.jpg").is_file())
+        self.assertTrue((ROOT / "assets" / "service-detail-hero.webp").is_file())
         css = (ROOT / "styles.css").read_text()
-        self.assertIn("assets/service-detail-hero.jpg", css)
+        self.assertIn("assets/service-detail-hero.webp", css)
 
 
 if __name__ == "__main__":

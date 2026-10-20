@@ -27,8 +27,8 @@ class DoctorsPageTests(unittest.TestCase):
         html = page.read_text()
         self.assertIn('href="doctors.css"', html)
         self.assertIn('href="styles.css"', html)
-        for asset in ("doctor-1-figma.png", "doctor-2-figma.png", "doctor-3-figma.png",
-                      "doctor-4-figma.png", "doctor-5-figma.png", "doctor-6-figma.jpg"):
+        for asset in ("doctor-1-figma.webp", "doctor-2-figma.webp", "doctor-3-figma.webp",
+                      "doctor-4-figma.webp", "doctor-5-figma.webp", "doctor-6-figma.webp"):
             self.assertTrue((ROOT / "assets" / asset).is_file(), asset)
             self.assertIn(asset, html)
 

@@ -25,7 +25,7 @@ class BlogDetailsPageTests(unittest.TestCase):
         source = script.read_text()
         for slug in ("first-visit", "tooth-pain", "braces-care"):
             self.assertIn(slug, source)
-        for photo in ("article-child-figma.png", "article-toothache-figma.png", "article-braces-figma.png"):
+        for photo in ("article-child-figma.webp", "article-toothache-figma.webp", "article-braces-figma.webp"):
             self.assertTrue((ROOT / "assets" / photo).is_file(), photo)
             self.assertIn(photo, source)
 

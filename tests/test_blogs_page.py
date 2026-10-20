@@ -12,7 +12,7 @@ class BlogsPageTests(unittest.TestCase):
         for text in ("Dental Care Insights", "Latest Articles", "Read, learn, and smile",
                      "What to Expect During Your First Dental Visit", "When to See a Dentist About Tooth Pain"):
             self.assertIn(text, html)
-        for asset in ("article-child-figma.png", "article-toothache-figma.png", "article-braces-figma.png"):
+        for asset in ("article-child-figma.webp", "article-toothache-figma.webp", "article-braces-figma.webp"):
             self.assertTrue((ROOT / "assets" / asset).is_file(), asset)
             self.assertIn(asset, html)
 

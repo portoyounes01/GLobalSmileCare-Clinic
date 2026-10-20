@@ -11,7 +11,7 @@
 .about-page .story-copy h2{margin:0 0 13px;font-size:clamp(20px,1.65vw,27px);line-height:1.24;letter-spacing:-.04em;font-weight:500}
 .about-page .story-copy p{margin:0 0 24px;max-width:360px;color:var(--about-muted);font-size:13px;line-height:1.52}
 .about-page .story-copy .button{font-size:11px;padding:11px 18px;gap:12px}
-.about-page .modern-card{position:relative;min-height:345px;overflow:hidden;align-self:stretch;border-radius:14px;padding:22px 20px;background:#397c84 url('assets/about-dentistry-figma.png') center/cover no-repeat;color:white}
+.about-page .modern-card{position:relative;min-height:345px;overflow:hidden;align-self:stretch;border-radius:14px;padding:22px 20px;background:#397c84 url('assets/about-dentistry-figma.webp') center/cover no-repeat;color:white}
 .about-page .modern-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#031d2536 0%,transparent 38%,#031d2575 100%)}
 .about-page .modern-card>*{position:relative}
 .about-page .modern-card-copy h2{margin:0 0 8px;font-size:20px;line-height:1.08;letter-spacing:-.04em;font-weight:500}
@@ -45,7 +45,7 @@
 .about-page .doctor-caption p{margin:0;color:var(--about-muted);font-size:9px}
 .about-page .doctor-caption>span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#f2f8fb;color:#078fc3;font-size:12px}
 .about-page .about-cta-wrap{padding-top:4px;padding-bottom:70px}
-.about-page .about-cta{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;padding:40px;border-radius:18px;background:linear-gradient(90deg,#0d2634ce 0%,#0d263489 49%,#0d263420 100%),url('assets/appointment-banner-figma.png') center 48%/cover no-repeat;color:white}
+.about-page .about-cta{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;padding:40px;border-radius:18px;background:linear-gradient(90deg,#0d2634ce 0%,#0d263489 49%,#0d263420 100%),url('assets/appointment-banner-figma.webp') center 48%/cover no-repeat;color:white}
 .about-page .about-cta-copy{max-width:425px}
 .about-page .about-cta .eyebrow{background:#ffffff2b;color:white;font-size:9px;padding:6px 10px}
 .about-page .about-cta h2{margin:13px 0 19px;color:white;font-size:clamp(27px,2.6vw,38px);line-height:1.12;letter-spacing:-.05em;font-weight:500}
