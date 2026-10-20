@@ -40,9 +40,11 @@ class MotionTests(unittest.TestCase):
         script = (ROOT / "script.js").read_text()
         css = (ROOT / "premium.css").read_text()
         self.assertIn("main > section:not(.hero)", script)
-        self.assertIn(".sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)", script)
-        self.assertIn("Math.min(index, 5) * 180", script)
-        self.assertIn("transition: opacity 900ms", css)
+        self.assertIn("const revealOrderByGroup = new Map()", script)
+        self.assertIn("Math.min(groupOrder, 4) * 300", script)
+        self.assertIn("clip-path: inset(100% 0 0)", css)
+        self.assertIn("transition: opacity 1300ms", css)
+        self.assertIn("transition-duration: 1300ms !important", css)
 
 
 if __name__ == "__main__":

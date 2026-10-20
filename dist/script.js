@@ -18,19 +18,23 @@ function enableScrollMotion() {
   if (!motionTargets.length) return;
 
   document.documentElement.classList.add('motion-ready');
+  const revealOrderByGroup = new Map();
   const revealObserver = new IntersectionObserver(entries => {
     entries
       .filter(entry => entry.isIntersecting)
       .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-      .forEach((entry, index) => {
-        entry.target.style.setProperty('--reveal-delay', `${Math.min(index, 5) * 180}ms`);
+      .forEach(entry => {
         entry.target.classList.add('is-visible');
         revealObserver.unobserve(entry.target);
       });
-  }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px -8% 0px' });
 
   motionTargets.forEach(element => {
     element.classList.add('reveal-item');
+    const group = element.closest('section, article') || element.parentElement;
+    const groupOrder = revealOrderByGroup.get(group) || 0;
+    element.style.setProperty('--reveal-delay', `${Math.min(groupOrder, 4) * 300}ms`);
+    revealOrderByGroup.set(group, groupOrder + 1);
     if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
       element.classList.add('motion-card');
     }
