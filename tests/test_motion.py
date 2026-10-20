@@ -19,7 +19,16 @@ class MotionTests(unittest.TestCase):
         css = (ROOT / "premium.css").read_text()
         self.assertIn("@media (hover: hover) and (prefers-reduced-motion: no-preference)", css)
         self.assertIn(".motion-card:hover", css)
-        self.assertIn("transform: translateY(-3px)", css)
+        self.assertIn("transform: translateY(-5px)", css)
+        self.assertIn("filter: saturate(1.04)", css)
+
+    def test_hero_has_a_visible_entry_motion_and_load_fallback(self):
+        script = (ROOT / "script.js").read_text()
+        css = (ROOT / "premium.css").read_text()
+        self.assertIn(".hero-copy', '.hero-visual", script)
+        self.assertIn("animation: hero-enter 850ms", css)
+        self.assertIn("@keyframes hero-enter", css)
+        self.assertIn("animation: none", css)
 
 
 if __name__ == "__main__":

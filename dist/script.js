@@ -5,7 +5,8 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const motionTargets = document.querySelectorAll([
     '.hero-copy', '.hero-visual', '.value-card', '.service-feature', '.doctor-card',
-    '.doctor-feature', '.review-grid article', '.appointment-card', '.question-box',
+    '.doctor-feature', '.clinic-about-card', '.clinic-value-card', '.clinic-service-card',
+    '.review-grid article', '.appointment-card', '.question-box',
     '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
     '.article-list article', '.article-detail', '.related-articles', '.service-detail-intro',
     '.visit-steps article', '.detail-overview-image', '.detail-final-cta'
@@ -23,7 +24,7 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window) {
 
     motionTargets.forEach((element, index) => {
       element.classList.add('reveal-item');
-      if (element.matches('.value-card, .doctor-card, .review-grid article, .contact-item, .blog-card, .article-list article')) {
+      if (element.matches('.value-card, .doctor-card, .clinic-about-card, .clinic-value-card, .clinic-service-card, .review-grid article, .contact-item, .blog-card, .article-list article, .service-feature, .appointment-card')) {
         element.classList.add('motion-card');
       }
       element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`);
