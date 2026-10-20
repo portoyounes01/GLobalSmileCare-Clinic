@@ -10,7 +10,12 @@ const motionTargetSelector = [
     '.contact-item', '.modern-card', '.about-value', '.blog-card', '.blog-card-feature',
     '.article-list article', '.article-detail', '.related-articles', '.service-detail-intro',
     '.visit-steps article', '.detail-overview-image', '.detail-final-cta', '.cta', '.about-cta',
-    '.blogs-cta', '.services-promo', '.service-detail-card', '.newsletter'
+    '.blogs-cta', '.services-promo', '.service-detail-card', '.newsletter',
+    '.about-story', '.story-copy', '.result-card', '.about-team', '.team-heading',
+    '.doctor-profile', '.doctor-directory-grid', '.doctors-intro-copy', '.contact-copy',
+    '.blog-grid', '.article-hero-image', '.article-sidebar', '.article-help',
+    '.article-content p', '.article-content h2', '.article-content h3', '.article-content ul',
+    '.article-content blockquote', '.detail-benefit-grid .value-card'
 ].join(',');
 
 let scrollMotionEnabled = false;

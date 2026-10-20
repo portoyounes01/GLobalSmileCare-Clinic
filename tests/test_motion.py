@@ -48,6 +48,16 @@ class MotionTests(unittest.TestCase):
         self.assertIn(".motion-ready .reveal-item", css)
         self.assertNotIn("clip-path: inset(100% 0 0)", css)
 
+    def test_all_inner_pages_have_scroll_motion_targets(self):
+        script = (ROOT / "script.js").read_text()
+        for selector in (
+            ".about-story", ".result-card", ".doctor-profile", ".doctor-directory-grid",
+            ".blog-grid", ".article-content p", ".article-sidebar", ".article-help",
+            ".service-detail-card", ".services-promo", ".detail-benefit-grid .value-card"
+        ):
+            with self.subTest(selector=selector):
+                self.assertIn(selector, script)
+
 
 if __name__ == "__main__":
     unittest.main()
