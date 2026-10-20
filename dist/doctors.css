@@ -1,6 +1,6 @@
 /* Page-scoped styles for the Figma Doctors frame. */
 .doctors-page{--doc-blue:#079bd5;--doc-ink:#111b2b;--doc-muted:#74808e;color:var(--doc-ink)}
-.doctors-page .nav>a.active{color:#087ead}
+.doctors-page .nav>a.active{color:#398c6d}
 .doctors-page .doctors-intro{padding-top:46px;padding-bottom:62px}
 .doctors-page .breadcrumbs{margin:0 0 22px;font-size:12px}
 .doctors-page .doctors-intro-copy{display:grid;grid-template-columns:1fr .72fr;gap:65px;align-items:center;margin-bottom:38px}
@@ -11,7 +11,7 @@
 .doctors-page .doctor-feature .eyebrow{margin-bottom:14px;padding:5px 9px;background:#ffffff28;color:#dff6ff;font-size:9px}
 .doctors-page .doctor-feature h2{margin:0 0 10px;color:#fff;font-size:21px;line-height:1.16;letter-spacing:-.04em;font-weight:500}
 .doctors-page .doctor-feature p{margin:0 0 17px;color:#e7f8ff;font-size:10px;line-height:1.45}
-.doctors-page .doctor-feature .button{padding:9px 13px;background:#fff;color:#078fc3;font-size:9px;gap:10px}
+.doctors-page .doctor-feature .button{padding:9px 13px;background:#fff;color:#3c9c78;font-size:9px;gap:10px}
 .doctors-page .doctor-profile{min-width:0}
 .doctors-page .doctor-image{height:225px;overflow:hidden;border-radius:15px;background:#f4f7f9}
 .doctors-page .doctor-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
@@ -30,7 +30,7 @@
 .doctors-page .doctors-faq .faq-list details{padding:16px 19px}
 .doctors-page .doctors-faq .faq-list summary{font-size:12px}
 .doctors-page .doctors-faq .faq-list p{font-size:11px}
-.doctors-page .doctors-contact{padding-block:54px;background:#f4f9fc}
+.doctors-page .doctors-contact{padding-block:54px;background:#f2f8f5}
 .doctors-page .doctors-contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
 .doctors-page .contact-copy>.eyebrow{margin-bottom:14px}
 .doctors-page .contact-copy h2{margin:0 0 11px;font-size:clamp(32px,3vw,44px);line-height:1.08;letter-spacing:-.05em;font-weight:500}

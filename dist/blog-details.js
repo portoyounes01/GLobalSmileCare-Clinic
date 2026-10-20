@@ -1,40 +1,39 @@
 const articles = {
   'first-visit': {
-    title: 'What to Expect During Your First Dental Visit',
-    category: 'Children’s Dentistry',
-    date: '18 Jul, 2023',
+    title: 'Wat gebeurt er tijdens een eerste tandartsbezoek?',
+    category: 'Eerste afspraak',
+    date: 'Praktische informatie',
     image: 'assets/article-child-figma.webp',
-    alt: 'A child smiling during a comfortable dental visit',
-    lead: 'A first dental visit gives your child a chance to meet the team, explore the room, and get comfortable at their own pace.',
-    content: `<h2>Make the first visit feel familiar</h2><p>Before the appointment, talk about the visit in a calm, positive way. Let the clinic know about any worries or sensory needs so the team can help your child feel at ease.</p><h2>What happens at the appointment?</h2><p>The dentist will usually ask about your child’s health, check their teeth and gums, and explain what they see. The visit can be adapted to your child’s age and comfort.</p><p>Questions are welcome. Your dental team can suggest simple ways to make brushing and future visits easier at home.</p><h2>After the visit</h2><p>Keep brushing twice a day with an age-appropriate amount of fluoride toothpaste, and follow the schedule your dental team recommends for checkups.</p>`
+    alt: 'Kind tijdens een tandartsbezoek',
+    lead: 'Tijdens uw eerste bezoek bespreekt de tandarts uw vraag en bekijkt uw tanden en tandvlees.',
+    content: `<h2>Uw eerste afspraak</h2><p>Vertel de tandarts waar u last van heeft en welke vragen u heeft. Zo kunnen we de controle afstemmen op uw situatie.</p><h2>De controle</h2><p>De tandarts bekijkt uw tanden en tandvlees op gaatjes, aften of tandvleesproblemen en bespreekt de bevindingen met u.</p><h2>Wat gebeurt er daarna?</h2><p>We leggen uit welke zorg eventueel nodig is en bespreken samen de volgende stap. Als een gaatje kan worden gevuld, doen we dat wanneer dit mogelijk is.</p>`
   },
   'tooth-pain': {
-    title: 'When to See a Dentist About Tooth Pain',
-    category: 'Oral Health',
-    date: '18 Jul, 2023',
+    title: 'Wanneer gaat u met tandpijn naar de tandarts?',
+    category: 'Mondgezondheid',
+    date: 'Praktische informatie',
     image: 'assets/article-toothache-figma.webp',
-    alt: 'Man holding his cheek with tooth pain',
-    lead: 'Tooth discomfort can have different causes. Knowing when to contact a dentist can help you get the right advice.',
-    content: `<h2>Notice how the pain changes</h2><p>Contact a dentist if pain persists, returns, or affects eating or sleeping. A prompt assessment can help identify what is causing it.</p><h2>When to seek urgent care</h2><p>Seek urgent dental advice for severe pain, facial swelling, fever, or an injury to a tooth. If you have difficulty breathing or swallowing, seek emergency medical care.</p><h2>What you can do while you wait</h2><p>Keep the area clean and follow advice from a dental professional. Avoid placing aspirin or other medication directly on the tooth or gums.</p>`
+    alt: 'Man met tandpijn',
+    lead: 'Blijft tandpijn aanhouden of keert die terug? Neem contact op met een tandarts voor advies.',
+    content: `<h2>Let op aanhoudende klachten</h2><p>Tandpijn kan verschillende oorzaken hebben. Neem contact op met een tandarts wanneer de pijn aanhoudt, terugkomt of eten en slapen moeilijk maakt.</p><h2>Wanneer is snelle hulp belangrijk?</h2><p>Bij hevige pijn, zwelling, koorts of tandletsel is snelle beoordeling belangrijk. Neem bij ademhalings- of slikproblemen onmiddellijk contact op met de spoeddiensten.</p><h2>Bespreek uw klachten</h2><p>De tandarts kan uw tanden en tandvlees onderzoeken en uitleggen welke vervolgstappen passend zijn.</p>`
   },
   'braces-care': {
-    title: 'What to Know Before Getting Braces',
-    category: 'Treatments',
-    date: '18 Jul, 2023',
+    title: 'Wat u kunt doen bij tandvleesproblemen',
+    category: 'Mondgezondheid',
+    date: 'Praktische informatie',
     image: 'assets/article-braces-figma.webp',
-    alt: 'Dental model showing braces and orthodontic wires',
-    lead: 'Braces can help align your smile. Learn what to expect and how to care for your teeth throughout treatment.',
-    content: `<h2>Understand your treatment plan</h2><p>Your orthodontist will explain your treatment plan, how to care for your braces, and what to expect at adjustment visits.</p><h2>Care for your teeth and braces</h2><p>Brush carefully around brackets and wires, and use the cleaning tools recommended by your dental team to reach between them.</p><h2>Keep up daily care at home</h2><p>Brush twice a day with fluoride toothpaste, clean between your teeth, and ask your dental team if you need advice choosing products or improving your routine.</p>`
+    alt: 'Illustratie over tandheelkundige zorg',
+    lead: 'Bloedend of terugtrekkend tandvlees komt vaak voor. De tandarts kan de oorzaak onderzoeken en advies geven.',
+    content: `<h2>Bespreek tandvleesklachten</h2><p>De tandarts bekijkt uw tandvlees en bespreekt mogelijke oorzaken en passende verzorging.</p><h2>Verzorg uw mond dagelijks</h2><p>Poets uw tanden zorgvuldig en volg het advies van uw tandarts over dagelijkse mondverzorging.</p><h2>Maak een afspraak</h2><p>Blijven uw klachten aanhouden? Neem contact op met de praktijk om uw klachten te bespreken.</p>`
   }
 };
 
 const params = new URLSearchParams(window.location.search);
 const article = articles[params.get('article')] || articles['first-visit'];
-document.title = `${article.title} — Smile Dental Care`;
+document.title = `${article.title} — Global Smile Care`;
 document.querySelector('#article-title').textContent = article.title;
 document.querySelector('#article-breadcrumb-title').textContent = article.title;
 document.querySelector('#article-category').textContent = article.category;
-document.querySelector('#article-date').textContent = article.date;
 document.querySelector('#article-lead').textContent = article.lead;
 const image = document.querySelector('#article-image');
 image.src = article.image;

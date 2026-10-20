@@ -1,4 +1,3 @@
-from html.parser import HTMLParser
 from pathlib import Path
 import unittest
 
@@ -6,36 +5,24 @@ ROOT = Path(__file__).resolve().parents[1] / "dist"
 
 
 class DoctorsPageTests(unittest.TestCase):
-    def test_doctors_page_contains_design_sections_and_six_profiles(self):
-        page = ROOT / "doctors.html"
-        self.assertTrue(page.is_file(), "Doctors route should exist")
-        html = page.read_text()
-        for text in (
-            "Thoughtful Dental Care",
-            "Expert dental care you can trust.",
-            "Your Question",
-            "Get in Touch",
-            "Book Appointment",
-            "Join Our Newsletter",
-        ):
+    def test_team_page_uses_real_clinic_facts(self):
+        html = (ROOT / "doctors.html").read_text()
+        for text in ("Global Smile Care", "Nieuwe patiënten zijn welkom", "Antwerpen-Zuid", "Tolstraat 40", "info@globalsmilecare.be"):
             self.assertIn(text, html)
         self.assertEqual(html.count('class="doctor-profile"'), 6)
+        for placeholder in ("Arlene McCoy", "Robert Fox", "Implant Specialist", "Orthodontist"):
+            self.assertNotIn(placeholder, html)
 
-    def test_doctors_page_uses_local_portraits_and_styles(self):
-        page = ROOT / "doctors.html"
-        self.assertTrue(page.is_file(), "Doctors route should exist")
-        html = page.read_text()
+    def test_team_page_uses_its_styles_and_verified_online_booking(self):
+        html = (ROOT / "doctors.html").read_text()
         self.assertIn('href="doctors.css"', html)
         self.assertIn('href="styles.css"', html)
-        for asset in ("doctor-1-figma.webp", "doctor-2-figma.webp", "doctor-3-figma.webp",
-                      "doctor-4-figma.webp", "doctor-5-figma.webp", "doctor-6-figma.webp"):
-            self.assertTrue((ROOT / "assets" / asset).is_file(), asset)
-            self.assertIn(asset, html)
+        self.assertIn('https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG', html)
 
-    def test_sitewide_doctors_links_open_doctors_page(self):
+    def test_sitewide_team_links_open_dedicated_page(self):
         for name in ("index.html", "services.html", "service-details.html", "about.html"):
             html = (ROOT / name).read_text()
-            self.assertIn('href="doctors.html">Doctors</a>', html, name)
+            self.assertIn('href="doctors.html">Ons team</a>', html, name)
 
 
 if __name__ == "__main__":

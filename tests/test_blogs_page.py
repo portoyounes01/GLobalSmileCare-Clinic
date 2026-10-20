@@ -5,12 +5,9 @@ ROOT = Path(__file__).resolve().parents[1] / "dist"
 
 
 class BlogsPageTests(unittest.TestCase):
-    def test_blogs_page_has_article_listing_and_local_figma_images(self):
-        page = ROOT / "blogs.html"
-        self.assertTrue(page.is_file(), "Blogs route should exist")
-        html = page.read_text()
-        for text in ("Dental Care Insights", "Latest Articles", "Read, learn, and smile",
-                     "What to Expect During Your First Dental Visit", "When to See a Dentist About Tooth Pain"):
+    def test_blogs_page_has_dutch_articles_and_local_images(self):
+        html = (ROOT / "blogs.html").read_text()
+        for text in ("Tandzorg met aandacht", "Uit onze praktijk", "Wat gebeurt er tijdens een eerste tandartsbezoek?", "Wanneer gaat u met tandpijn naar de tandarts?"):
             self.assertIn(text, html)
         for asset in ("article-child-figma.webp", "article-toothache-figma.webp", "article-braces-figma.webp"):
             self.assertTrue((ROOT / "assets" / asset).is_file(), asset)
@@ -20,10 +17,7 @@ class BlogsPageTests(unittest.TestCase):
         for name in ("index.html", "services.html", "service-details.html", "about.html", "doctors.html"):
             html = (ROOT / name).read_text()
             self.assertIn('href="blogs.html"', html, name)
-        home = (ROOT / "index.html").read_text()
-        self.assertIn('href="blogs.html">Browse Articles', home)
-        html = (ROOT / "blogs.html").read_text()
-        self.assertIn('aria-current="page"', html)
+        self.assertIn('aria-current="page"', (ROOT / "blogs.html").read_text())
 
 
 if __name__ == "__main__":

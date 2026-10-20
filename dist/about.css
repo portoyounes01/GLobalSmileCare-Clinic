@@ -1,6 +1,6 @@
 /* Page-only styling for the Figma About Us frame. */
-.about-page{--about-blue:#009cda;--about-ink:#171d2c;--about-muted:#737e8b;color:var(--about-ink)}
-.about-page .nav>a.active{color:#087ead}
+.about-page{--about-blue:#72bea0;--about-ink:#171d2c;--about-muted:#737e8b;color:var(--about-ink)}
+.about-page .nav>a.active{color:#398c6d}
 .about-page .about-intro{padding-top:52px;padding-bottom:0}
 .about-page .breadcrumbs{margin:0 0 26px;font-size:12px;color:#111b2b}
 .about-page .about-intro h1{max-width:920px;margin:0;font-size:clamp(38px,4vw,54px);line-height:1.08;letter-spacing:-.055em;font-weight:500}
@@ -23,8 +23,8 @@
 .about-page .result-card strong{display:inline-grid;min-height:25px;place-items:center;padding:0 11px;border-radius:20px;background:white;color:#1487b5;font-size:11px}
 .about-page .about-values{display:grid;gap:17px}
 .about-page .about-value{min-height:162px;padding:19px;border:1px solid #f0f3f6;border-radius:14px;background:#f8f9fb}
-.about-page .value-symbol{display:grid;place-items:center;width:35px;height:35px;margin-bottom:15px;border-radius:50%;background:white;color:#078fc3;font-size:15px}
-.about-page .value-symbol.person{font-size:13px;text-shadow:0 0 0 #078fc3}
+.about-page .value-symbol{display:grid;place-items:center;width:35px;height:35px;margin-bottom:15px;border-radius:50%;background:white;color:#3c9c78;font-size:15px}
+.about-page .value-symbol.person{font-size:13px;text-shadow:0 0 0 #3c9c78}
 .about-page .value-symbol.comfort{background:#e9f8fd;font-size:18px}
 .about-page .about-value h3{margin:0 0 6px;font-size:13px;line-height:1.25;font-weight:600;letter-spacing:-.015em}
 .about-page .about-value p{margin:0;color:var(--about-muted);font-size:10px;line-height:1.45}
@@ -43,7 +43,7 @@
 .about-page .doctor-caption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 4px 0}
 .about-page .doctor-caption h3{margin:0 0 3px;font-size:11px;font-weight:600}
 .about-page .doctor-caption p{margin:0;color:var(--about-muted);font-size:9px}
-.about-page .doctor-caption>span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#f2f8fb;color:#078fc3;font-size:12px}
+.about-page .doctor-caption>span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#f2f8fb;color:#3c9c78;font-size:12px}
 .about-page .about-cta-wrap{padding-top:4px;padding-bottom:70px}
 .about-page .about-cta{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;padding:40px;border-radius:18px;background:linear-gradient(90deg,#0d2634ce 0%,#0d263489 49%,#0d263420 100%),url('assets/appointment-banner-figma.webp') center 48%/cover no-repeat;color:white}
 .about-page .about-cta-copy{max-width:425px}
