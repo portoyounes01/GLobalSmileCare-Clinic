@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical dental care articles, tips, and advice from the Smile team.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/tooth-mark.svg" type="image/svg+xml">
+  <title>Blogs — Smile Dental Care</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blogs.css">
+  <script defer src="script.js"></script>
+  <script defer src="blogs.js"></script>
+</head>
+<body class="blogs-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Smile home"><img class="tooth" src="assets/tooth-mark.svg" alt=""><span>Smile</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" class="nav" aria-label="Primary navigation">
+        <a href="services.html">Services <span aria-hidden="true">⌄</span></a><a href="about.html">About Us</a><a href="doctors.html">Doctors</a><a class="active" href="blogs.html" aria-current="page">Blogs</a><a class="pill nav-book" href="index.html#appointment">Book A Call <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="blogs-intro container" aria-labelledby="blogs-title">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">•</span><span aria-current="page">Blogs</span></nav>
+      <div class="blogs-heading"><div><span class="eyebrow">Smile Journal</span><h1 id="blogs-title">Dental Care Insights</h1></div><p>Clear, practical advice from our dental team to help you care for your smile every day.</p></div>
+    </section>
+    <section class="blogs-content container" aria-labelledby="articles-title">
+      <div class="blogs-toolbar"><div><span class="eyebrow">Latest Articles</span><h2 id="articles-title">Read, learn, and smile</h2></div><label class="blog-search"><span class="sr-only">Search articles</span><span aria-hidden="true">⌕</span><input id="blog-search" type="search" placeholder="Search articles" autocomplete="off"></label></div>
+      <div class="blog-filters" role="group" aria-label="Filter articles by topic"><button class="selected" type="button" data-category="all" aria-pressed="true">All Articles</button><button type="button" data-category="children" aria-pressed="false">Children’s Dentistry</button><button type="button" data-category="oral-health" aria-pressed="false">Oral Health</button><button type="button" data-category="treatments" aria-pressed="false">Treatments</button></div>
+      <div class="blog-grid" id="blog-grid">
+        <article class="blog-card blog-card-feature" data-category="children" data-search="first dental visit child children dentist family">
+          <img src="assets/article-child-figma.png" alt="A child smiling during a comfortable dental visit" loading="eager"><div class="blog-card-copy"><div class="blog-meta"><span>Children’s Dentistry</span><time datetime="2023-07-18">18 Jul, 2023</time></div><h3>What to Expect During Your First Dental Visit</h3><p>A first visit is a chance for your child to meet the dental team, explore the room, and get comfortable at their own pace.</p><details><summary>Read article</summary><div class="article-body"><p>Before the appointment, talk about the visit in a calm, positive way. Let the clinic know about any worries or sensory needs so the team can help your child feel at ease.</p><p>The dentist will usually ask about your child’s health, check their teeth and gums, and explain what they see. The visit can be adapted to your child’s age and comfort.</p><p>Questions are welcome. Your dental team can suggest simple ways to make brushing and future visits easier at home.</p><a class="full-article-link" href="blog-details.html?article=first-visit">Read full article <span aria-hidden="true">↗</span></a></div></details></div>
+        </article>
+        <article class="blog-card" data-category="oral-health" data-search="tooth pain toothache dentist emergency oral health">
+          <img src="assets/article-toothache-figma.png" alt="Man holding his cheek with tooth pain" loading="lazy"><div class="blog-card-copy"><div class="blog-meta"><span>Oral Health</span><time datetime="2023-07-18">18 Jul, 2023</time></div><h3>When to See a Dentist About Tooth Pain</h3><p>Learn what to notice and when it’s a good idea to get professional advice about tooth discomfort.</p><details><summary>Read article</summary><div class="article-body"><p>Tooth pain can have many causes. Contact a dentist if pain persists, returns, or affects eating or sleeping. A prompt assessment can help identify what is causing it.</p><p>Seek urgent dental advice for severe pain, facial swelling, fever, or an injury to a tooth. If you have difficulty breathing or swallowing, seek emergency medical care.</p><a class="full-article-link" href="blog-details.html?article=tooth-pain">Read full article <span aria-hidden="true">↗</span></a></div></details></div>
+        </article>
+        <article class="blog-card" data-category="treatments" data-search="braces aligners teeth cleaning orthodontics treatment">
+          <img src="assets/article-braces-figma.png" alt="Dental model showing braces and orthodontic wires" loading="lazy"><div class="blog-card-copy"><div class="blog-meta"><span>Treatments</span><time datetime="2023-07-18">18 Jul, 2023</time></div><h3>What to Know Before Getting Braces</h3><p>Braces can help align your smile. Learn what to expect and how to care for your teeth throughout treatment.</p><details><summary>Read article</summary><div class="article-body"><p>Your orthodontist will explain your treatment plan and how to care for your braces during treatment.</p><p>Brush carefully around brackets and wires, and use the cleaning tools recommended by your dental team to reach between them.</p><a class="full-article-link" href="blog-details.html?article=braces-care">Read full article <span aria-hidden="true">↗</span></a></div></details></div>
+        </article>
+      </div>
+      <p class="blog-empty" id="blog-empty" hidden>No articles match that search. Try a different word or topic.</p>
+    </section>
+    <section class="blogs-cta-wrap container" aria-label="Contact the dental team"><div class="blogs-cta"><span class="eyebrow">Here to Help</span><h2>Have a question about your smile?</h2><p>Our friendly team is ready to help you find the right next step.</p><a class="button" href="index.html#appointment">Talk to Our Team <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="newsletter"><div><span class="eyebrow">Newsletter</span><h2>Join Our Newsletter</h2><p>Get expert dental advice, health tips, and clinic updates straight to your inbox.</p></div><form id="newsletter-form"><label class="sr-only" for="newsletter-email">Your email</label><input id="newsletter-email" type="email" placeholder="example@gmail.com" required><button type="submit">Subscribe</button><span class="newsletter-message" role="status"></span></form></div><div class="footer-links"><div class="footer-brand"><a class="brand" href="index.html"><img class="tooth" src="assets/tooth-mark.svg" alt=""><span>Smile</span></a><p>Creating Brighter Smiles, One<br>Patient at a Time</p></div><div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About Us</a><a href="doctors.html">Doctors</a><a href="blogs.html" aria-current="page">Blogs</a><a href="index.html#contact">Contact</a></div><div><h3>Service</h3><a href="services.html">Teeth Checkups</a><a href="services.html">Dental Implants</a><a href="services.html">Teeth Whitening</a><a href="services.html">Braces &amp; Aligners</a></div><div><h3>Legal</h3><a href="index.html#contact">Privacy Policy</a><a href="index.html#contact">Terms of Service</a><a href="index.html#contact">Cookies</a></div></div><div class="footer-bottom"><small>All rights reserved to Smile 2026</small><small>Connect with us &nbsp; X &nbsp; ◎ &nbsp; ▣</small></div></div></footer>
+</body>
+</html>

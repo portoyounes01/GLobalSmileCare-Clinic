@@ -1,0 +1,30 @@
+.blog-details-page .article-breadcrumbs{margin:31px 0 28px;font-size:12px;display:flex;align-items:center;gap:10px;color:#788390}
+.blog-details-page .article-breadcrumbs a{color:#148fbd}
+.blog-details-page .article-layout{display:grid;grid-template-columns:minmax(0,780px) minmax(240px,320px);justify-content:space-between;align-items:start;gap:56px;padding-bottom:78px}
+.blog-details-page .article-detail-meta{display:flex;align-items:center;flex-wrap:wrap;gap:14px;color:#74808e;font-size:11px}
+.blog-details-page .article-category{border-radius:18px;background:#eaf7fc;color:#148fbd;padding:7px 11px;font-weight:600}
+.blog-details-page .article-detail h1{max-width:760px;margin:20px 0 14px;color:#111b2b;font-size:clamp(38px,4.7vw,58px);line-height:1.06;letter-spacing:-.055em;font-weight:500}
+.blog-details-page .article-lead{max-width:720px;margin:0 0 25px;color:#687584;font-size:16px;line-height:1.6}
+.blog-details-page .article-hero-image{display:block;width:100%;height:min(46vw,450px);min-height:280px;object-fit:cover;border-radius:20px;background:#f2f6f8}
+.blog-details-page .article-content{max-width:720px;padding:19px 0 10px;color:#43505e}
+.blog-details-page .article-content h2{margin:26px 0 9px;color:#111b2b;font-size:25px;line-height:1.2;letter-spacing:-.035em;font-weight:600}
+.blog-details-page .article-content p{margin:0 0 16px;font-size:14px;line-height:1.75}
+.blog-details-page .article-author{display:flex;align-items:center;gap:12px;margin-top:29px;padding:17px 0;border-top:1px solid #e6edf1;border-bottom:1px solid #e6edf1}
+.blog-details-page .author-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#e4f6fc;color:#078fc3;font-weight:700;font-size:17px}
+.blog-details-page .article-author strong,.blog-details-page .article-author span{display:block;font-size:11px}
+.blog-details-page .article-author span{margin-top:4px;color:#74808e;font-size:10px}
+.blog-details-page .back-to-blogs{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:#078fc3;font-size:12px;font-weight:700}
+.blog-details-page .article-sidebar{position:sticky;top:24px;display:grid;gap:20px}
+.blog-details-page .article-help{padding:24px;border-radius:17px;background:#f2f8fb}
+.blog-details-page .article-help .eyebrow,.blog-details-page .related-articles>.eyebrow{margin-bottom:13px}
+.blog-details-page .article-help h2{margin:0 0 8px;font-size:24px;letter-spacing:-.04em;font-weight:500}
+.blog-details-page .article-help p{margin:0 0 17px;color:#74808e;font-size:11px;line-height:1.6}
+.blog-details-page .article-help .button{font-size:10px}
+.blog-details-page .related-articles{padding:22px;border:1px solid #e8eef2;border-radius:17px;background:#fff}
+.blog-details-page .related-articles h2{margin:0 0 10px;font-size:22px;font-weight:500;letter-spacing:-.04em}
+.blog-details-page .related-articles>a{display:grid;grid-template-columns:74px 1fr;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #edf1f4}
+.blog-details-page .related-articles>a img{width:74px;height:65px;object-fit:cover;border-radius:9px}
+.blog-details-page .related-articles>a span{font-size:11px;line-height:1.35;font-weight:600}
+.blog-details-page .related-articles>a:hover span{color:#078fc3}
+@media(max-width:850px){.blog-details-page .article-layout{grid-template-columns:minmax(0,1fr) 260px;gap:28px}.blog-details-page .article-sidebar{top:15px}.blog-details-page .article-help,.blog-details-page .related-articles{padding:18px}}
+@media(max-width:650px){.blog-details-page .article-breadcrumbs{margin:23px 0 19px;flex-wrap:wrap;font-size:11px}.blog-details-page .article-layout{grid-template-columns:1fr;gap:30px;padding-bottom:45px}.blog-details-page .article-sidebar{position:static;grid-row:2}.blog-details-page .article-detail h1{font-size:36px;margin:16px 0 10px}.blog-details-page .article-lead{font-size:13px;margin-bottom:18px}.blog-details-page .article-hero-image{height:62vw;min-height:220px;border-radius:14px}.blog-details-page .article-content h2{font-size:22px}.blog-details-page .article-content p{font-size:13px}.blog-details-page .related-articles>a{grid-template-columns:80px 1fr}.blog-details-page .related-articles>a img{width:80px;height:65px}}

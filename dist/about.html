@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the Smile dental team and learn how thoughtful, comfortable care guides every visit.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/tooth-mark.svg" type="image/svg+xml">
+  <title>About Us — Smile Dental Care</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="about.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="about-page">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Smile home"><img class="tooth" src="assets/tooth-mark.svg" alt=""><span>Smile</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <nav id="primary-nav" class="nav" aria-label="Primary navigation">
+        <a href="services.html">Services <span aria-hidden="true">⌄</span></a>
+        <a class="active" href="about.html" aria-current="page">About Us</a>
+        <a href="doctors.html">Doctors</a><a href="blogs.html">Blogs</a>
+        <a class="pill nav-book" href="index.html#appointment">Book A Call <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="about-intro container" aria-labelledby="about-title">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">•</span><span aria-current="page">About Us</span></nav>
+      <h1 id="about-title">Raising The Standard Of Dental Care<br>By Thoughtful Treatment</h1>
+      <div class="about-story">
+        <div class="story-copy">
+          <a class="story-brand" href="index.html" aria-label="Smile"><img src="assets/tooth-mark.svg" alt=""><span>Smile</span></a>
+          <h2>Our clinic helps patients experience dentistry without confusion or stress.</h2>
+          <p>By combining modern techniques with a gentle, patient-first approach, we deliver care that’s clear, comfortable, and effective.</p>
+          <a class="button" href="index.html#appointment">Contact Us <span aria-hidden="true">↗</span></a>
+        </div>
+        <article class="modern-card">
+          <div class="modern-card-copy"><h2>Smarter,<br>Modern Dentistry</h2><span>Comfort-led approach</span></div>
+          <a class="round-arrow" href="services.html" aria-label="Explore our services">↗</a>
+          <div class="result-card"><span>Results:</span><p>Improved patient comfort and treatment outcomes</p><strong>+95%</strong></div>
+        </article>
+        <div class="about-values">
+          <article class="about-value"><span class="value-symbol person" aria-hidden="true">●</span><h3>Personalised Treatment</h3><p>Clear guidance and tailored care designed around each patient’s needs.</p></article>
+          <article class="about-value"><span class="value-symbol comfort" aria-hidden="true">✣</span><h3>Comfort-Focused Technology</h3><p>Modern tools and techniques that reduce discomfort and improve precision.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-team container" id="team" aria-labelledby="team-title">
+      <div class="team-heading">
+        <div><span class="eyebrow">Our Doctors</span><h2 id="team-title">Meet Our Dental Team</h2><p>Our team of experienced dentists and specialists is committed to providing comfortable, precise, and patient-focused care at every visit.</p></div>
+        <div class="team-arrows" aria-label="Doctor carousel controls"><button class="arrow" type="button" data-slide="-1" aria-label="Previous doctors">←</button><button class="arrow" type="button" data-slide="1" aria-label="Next doctors">→</button></div>
+      </div>
+      <div class="about-doctors" id="about-doctor-grid">
+        <article class="about-doctor"><div class="portrait"><img src="assets/doctor-1-figma.png" alt="Eleanor Pena, general dentist"></div><div class="doctor-caption"><div><h3>Eleanor Pena</h3><p>General Dentist</p></div><span aria-hidden="true">↗</span></div></article>
+        <article class="about-doctor"><div class="portrait"><img src="assets/doctor-2-figma.png" alt="Kathryn Murphy, orthodontist"></div><div class="doctor-caption"><div><h3>Kathryn Murphy</h3><p>Orthodontist</p></div><span aria-hidden="true">↗</span></div></article>
+        <article class="about-doctor"><div class="portrait"><img src="assets/doctor-3-figma.png" alt="Wade Warren, implant specialist"></div><div class="doctor-caption"><div><h3>Wade Warren</h3><p>Implant Specialist</p></div><span aria-hidden="true">↗</span></div></article>
+        <article class="about-doctor"><div class="portrait"><img src="assets/doctor-4-figma.png" alt="Jenny Wilson, orthodontic specialist"></div><div class="doctor-caption"><div><h3>Jenny Wilson</h3><p>Orthodontic Specialist</p></div><span aria-hidden="true">↗</span></div></article>
+      </div>
+    </section>
+
+    <section class="about-cta-wrap container" aria-label="Book an appointment">
+      <div class="about-cta"><div class="about-cta-copy"><span class="eyebrow">Ready When You Are</span><h2>Don’t Wait Book<br>Your Appointment Now</h2><a class="button" href="index.html#appointment">Book A Schedule <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+
+    <section class="about-faq soft" aria-labelledby="faq-title">
+      <div class="container about-faq-grid">
+        <div class="faq-aside"><span class="eyebrow">FAQs</span><h2 id="faq-title">Your Questions<br>Answered</h2><p>Here are answers to some of the most common questions we receive.</p><div class="question-box"><h3>Still have questions?</h3><p>Can’t find the answer you’re looking for? Our team is happy to help.</p><a class="pill" href="index.html#appointment">Contact Us</a></div></div>
+        <div class="faq-list">
+          <details><summary>Is this clinic suitable for families and children?</summary><p>Yes. Our team welcomes patients of different ages and offers care tailored to each person.</p></details>
+          <details open><summary>Do you accept emergency dental visits?</summary><p>Yes. We offer emergency dental care for urgent issues such as tooth pain, swelling, or broken teeth. Same-day appointments may be available.</p></details>
+          <details><summary>What should I expect during my first visit?</summary><p>We’ll discuss your concerns, examine your teeth, and explain recommended next steps clearly.</p></details>
+          <details><summary>Do you accept insurance?</summary><p>Please contact our team to confirm the insurance options available for your visit.</p></details>
+          <details><summary>Is dental treatment painful?</summary><p>We focus on comfort and explain your options before treatment begins.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner">
+    <div class="newsletter"><div><span class="eyebrow">Newsletter</span><h2>Join Our Newsletter</h2><p>Get expert dental advice, health tips, and clinic updates straight to your inbox.</p></div><form id="newsletter-form"><label class="sr-only" for="newsletter-email">Your email</label><input id="newsletter-email" type="email" placeholder="example@gmail.com" required><button type="submit">Subscribe</button><span class="newsletter-message" role="status"></span></form></div>
+    <div class="footer-links"><div class="footer-brand"><a class="brand" href="index.html"><img class="tooth" src="assets/tooth-mark.svg" alt=""><span>Smile</span></a><p>Creating Brighter Smiles, One<br>Patient at a Time</p></div><div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About Us</a><a href="blogs.html">Blogs</a><a href="index.html#contact">Contact</a></div><div><h3>Service</h3><a href="services.html">Teeth Checkups</a><a href="services.html">Dental Implants</a><a href="services.html">Teeth Whitening</a><a href="services.html">Braces &amp; Aligners</a></div><div><h3>Legal</h3><a href="index.html#contact">Privacy Policy</a><a href="index.html#contact">Terms of Service</a><a href="index.html#contact">Cookies</a></div></div>
+    <div class="footer-bottom"><small>All rights reserved to Smile 2026</small><small>Connect with us &nbsp; X &nbsp; ◎ &nbsp; ▣</small></div>
+  </div></footer>
+</body>
+</html>

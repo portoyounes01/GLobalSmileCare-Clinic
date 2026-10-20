@@ -1,0 +1,46 @@
+/* Page-scoped styles for the Figma Doctors frame. */
+.doctors-page{--doc-blue:#079bd5;--doc-ink:#111b2b;--doc-muted:#74808e;color:var(--doc-ink)}
+.doctors-page .nav>a.active{color:#087ead}
+.doctors-page .doctors-intro{padding-top:46px;padding-bottom:62px}
+.doctors-page .breadcrumbs{margin:0 0 22px;font-size:12px}
+.doctors-page .doctors-intro-copy{display:grid;grid-template-columns:1fr .72fr;gap:65px;align-items:center;margin-bottom:38px}
+.doctors-page .doctors-intro h1{max-width:610px;margin:0;font-size:clamp(38px,4vw,54px);line-height:1.08;letter-spacing:-.055em;font-weight:500}
+.doctors-page .doctors-intro-copy>p{max-width:410px;margin:0;color:var(--doc-muted);font-size:14px;line-height:1.55}
+.doctors-page .doctor-directory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}
+.doctors-page .doctor-feature{min-height:225px;padding:20px;border-radius:15px;background:linear-gradient(145deg,#08a8e4,#0787ca);color:#fff}
+.doctors-page .doctor-feature .eyebrow{margin-bottom:14px;padding:5px 9px;background:#ffffff28;color:#dff6ff;font-size:9px}
+.doctors-page .doctor-feature h2{margin:0 0 10px;color:#fff;font-size:21px;line-height:1.16;letter-spacing:-.04em;font-weight:500}
+.doctors-page .doctor-feature p{margin:0 0 17px;color:#e7f8ff;font-size:10px;line-height:1.45}
+.doctors-page .doctor-feature .button{padding:9px 13px;background:#fff;color:#078fc3;font-size:9px;gap:10px}
+.doctors-page .doctor-profile{min-width:0}
+.doctors-page .doctor-image{height:225px;overflow:hidden;border-radius:15px;background:#f4f7f9}
+.doctors-page .doctor-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.doctors-page .doctor-profile:nth-child(3) .doctor-image img{object-fit:contain;object-position:center bottom}
+.doctors-page .doctor-profile:nth-child(4) .doctor-image img{object-position:center 18%}
+.doctors-page .doctor-caption{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:9px 3px 0}
+.doctors-page .doctor-caption h2{margin:0 0 3px;font-size:11px;font-weight:600;letter-spacing:-.015em}
+.doctors-page .doctor-caption p{margin:0;color:var(--doc-muted);font-size:9px}
+.doctors-page .doctor-caption>a{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:#f1f7fa;color:#1489b5;font-size:12px}
+.doctors-page .doctors-faq{padding-block:58px}
+.doctors-page .doctors-faq .faq-grid{grid-template-columns:.9fr 1.1fr;gap:68px}
+.doctors-page .doctors-faq .eyebrow{margin-bottom:14px}
+.doctors-page .doctors-faq h2{font-size:clamp(30px,2.8vw,40px)}
+.doctors-page .doctors-faq .faq-grid>div>p{font-size:12px}
+.doctors-page .doctors-faq .question-box{margin-top:34px;background:#fff}
+.doctors-page .doctors-faq .faq-list details{padding:16px 19px}
+.doctors-page .doctors-faq .faq-list summary{font-size:12px}
+.doctors-page .doctors-faq .faq-list p{font-size:11px}
+.doctors-page .doctors-contact{padding-block:54px;background:#f4f9fc}
+.doctors-page .doctors-contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.doctors-page .contact-copy>.eyebrow{margin-bottom:14px}
+.doctors-page .contact-copy h2{margin:0 0 11px;font-size:clamp(32px,3vw,44px);line-height:1.08;letter-spacing:-.05em;font-weight:500}
+.doctors-page .contact-copy>p{max-width:440px;margin:0 0 27px;color:var(--doc-muted);font-size:12px;line-height:1.55}
+.doctors-page .contact-item{display:flex;align-items:center;gap:12px;width:min(100%,410px);min-height:64px;margin-top:10px;padding:11px 14px;background:#fff;border:1px solid #e8eef2;border-radius:12px;font-size:12px;font-weight:600;box-shadow:0 4px 14px #17232b08}
+.doctors-page .contact-item>span:first-child{display:grid;place-items:center;width:32px;height:32px;flex:none;border-radius:9px;background:#e3f9ed;color:#21ad66;font-size:16px}
+.doctors-page .contact-item:nth-of-type(3)>span:first-child{background:#fff1d7;color:#e9a900}
+.doctors-page .contact-item>span:last-child{min-width:0;flex:1}.doctors-page .contact-item small{display:block;margin-top:3px;color:var(--doc-muted);font-size:10px;font-weight:400;line-height:1.25;white-space:nowrap}
+.doctors-page .appointment-card{box-shadow:0 12px 40px #17232b08}
+.doctors-page .appointment-card .button{font-size:11px}
+.doctors-page .appointment-card .form-message{font-size:11px;color:var(--doc-muted)}
+@media(max-width:850px){.doctors-page .doctors-intro{padding-top:35px;padding-bottom:45px}.doctors-page .doctors-intro-copy{grid-template-columns:1fr .8fr;gap:30px}.doctors-page .doctor-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.doctors-page .doctor-feature,.doctors-page .doctor-image{min-height:200px;height:200px}.doctors-page .doctor-feature{padding:16px}.doctors-page .doctor-feature h2{font-size:19px}.doctors-page .doctors-faq .faq-grid{gap:35px}.doctors-page .doctors-contact-grid{gap:35px}}
+@media(max-width:600px){.doctors-page .doctors-intro{padding-top:25px;padding-bottom:40px}.doctors-page .breadcrumbs{margin-bottom:18px;font-size:11px}.doctors-page .doctors-intro-copy{grid-template-columns:1fr;gap:10px;margin-bottom:25px}.doctors-page .doctors-intro h1{font-size:35px}.doctors-page .doctors-intro h1 br{display:none}.doctors-page .doctors-intro-copy>p{font-size:12px}.doctors-page .doctor-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.doctors-page .doctor-feature{grid-column:1/-1;min-height:150px;height:auto;padding:18px}.doctors-page .doctor-feature h2{max-width:270px;font-size:22px}.doctors-page .doctor-feature p{max-width:290px}.doctors-page .doctor-image{height:175px;min-height:175px;border-radius:12px}.doctors-page .doctor-caption{padding-top:7px}.doctors-page .doctor-caption h2{font-size:10px}.doctors-page .doctor-caption p{font-size:8px}.doctors-page .doctor-caption>a{width:21px;height:21px}.doctors-page .doctors-faq{padding-block:46px}.doctors-page .doctors-faq .faq-grid{grid-template-columns:1fr;gap:25px}.doctors-page .doctors-faq h2{font-size:33px}.doctors-page .doctors-faq .faq-grid>div>p{font-size:11px}.doctors-page .doctors-faq .question-box{margin-top:23px}.doctors-page .doctors-faq .faq-list details{padding:14px}.doctors-page .doctors-faq .faq-list summary{font-size:11px}.doctors-page .doctors-contact{padding-block:38px}.doctors-page .doctors-contact-grid{grid-template-columns:1fr;gap:22px}.doctors-page .contact-copy h2{font-size:34px}.doctors-page .contact-copy>p{font-size:11px}.doctors-page .contact-item{width:100%;max-width:360px;min-height:54px}.doctors-page .appointment-card{padding:24px}}
