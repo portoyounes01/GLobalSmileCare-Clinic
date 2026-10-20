@@ -35,6 +35,10 @@ class MobileReadabilityTests(unittest.TestCase):
         self.assertIn(".doctors-page .doctor-caption p{font-size:11px}", doctors_css)
         self.assertIn(".about-page .doctor-caption p{font-size:12px}", about_css)
 
+    def test_home_cta_heading_stays_white_over_the_photo(self):
+        css = (ROOT / "premium.css").read_text()
+        self.assertRegex(css, r"\.cta\s+h2\s*\{[^}]*color:\s*#fff")
+
     def test_muted_text_and_brand_accent_meet_wcag_aa_on_clinic_surfaces(self):
         css = (ROOT / "premium.css").read_text()
         colors = dict(re.findall(r"(--[a-z-]+):\s*(#[0-9a-fA-F]{6})", css.split("}", 1)[0]))

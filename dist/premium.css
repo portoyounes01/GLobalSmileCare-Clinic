@@ -79,6 +79,7 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
 .faq-list details { border-color: var(--line); }
 .faq-list summary:after { color: var(--clinic-forest); }
 .cta { border-radius: 18px 18px 62px 18px; background-color: #183c32; }
+.cta h2 { color: #fff; text-shadow: 0 2px 8px rgb(0 0 0 / 28%); }
 .contact-grid { gap: 72px; }
 .contact-item { border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 4px 16px rgb(29 57 44 / 4%); }
 .contact-item > span:first-child { flex: 0 0 36px; }
