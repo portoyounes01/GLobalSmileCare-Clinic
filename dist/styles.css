@@ -4,7 +4,7 @@
 
 /* Local Figma artwork, exported from the supplied Home design preview. */
 .tooth{display:block;width:31px;height:34px;transform:none}
-.hero-visual{background-image:url('assets/home-hero-figma.webp');background-position:center;background-repeat:no-repeat;background-size:cover}
+.hero-visual{background-image:url('assets/clinic-waiting.webp');background-position:center;background-repeat:no-repeat;background-size:cover}
 .hero-tags{display:none}
 .service-image{background-image:url('assets/services-treatment-figma.webp');background-position:center;background-size:cover}
 .doctor-card:nth-child(1) .doctor-photo{background-image:url('assets/doctor-1-figma.webp')}
