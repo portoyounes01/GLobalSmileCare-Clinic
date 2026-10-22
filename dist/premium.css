@@ -200,48 +200,49 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
   .footer { padding-inline: 0; }
 }
 
-/* Home hero: the real treatment room sits behind the headline. */
+/* Home hero: light editorial text area fading into the clinic photograph. */
 .home-hero {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 620px;
+  min-height: 640px;
+  width: 100%;
   overflow: hidden;
-  isolation: isolate;
-  padding: 64px clamp(32px, 5vw, 76px);
-  border-radius: 24px 24px 72px 24px;
+  padding: 70px max(32px, calc((100vw - 1220px) / 2));
+  background: #f7faf8;
 }
-.home-hero .hero-visual {
+.home-hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 69%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 47%;
+}
+.home-hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  border-radius: inherit;
-  background-image:
-    linear-gradient(90deg, rgb(251 252 250 / 96%) 0%, rgb(251 252 250 / 80%) 36%, rgb(251 252 250 / 10%) 74%),
-    linear-gradient(to bottom, transparent 61%, rgb(251 252 250 / 34%) 79%, #fbfcfa 100%),
-    url('assets/clinic-treatment-room.webp');
-  background-position: center, center, center 50%;
-  background-size: cover;
+  background:
+    linear-gradient(90deg, #f7faf8 0%, rgb(247 250 248 / 98%) 25%, rgb(247 250 248 / 88%) 39%, rgb(247 250 248 / 30%) 64%, transparent 80%),
+    linear-gradient(to bottom, transparent 76%, #fbfcfa 100%);
 }
-.home-hero .hero-copy { position: relative; z-index: 1; max-width: 565px; }
+.home-hero .hero-copy { position: relative; z-index: 1; max-width: 590px; }
+.home-hero h1 { color: #394a43; }
+.home-hero h1 em { color: #317a60; }
+.home-hero p { color: #59665f; }
 
 @media (max-width: 850px) {
-  .home-hero { min-height: 580px; padding: 54px 40px; }
-  .home-hero .hero-visual { height: 100%; min-height: 0; border-radius: inherit; }
+  .home-hero { min-height: 590px; padding: 60px 32px; }
+  .home-hero-photo { width: 78%; }
 }
 @media (max-width: 600px) {
-  .home-hero { min-height: 620px; align-items: flex-start; padding: 42px 25px; border-radius: 18px 18px 46px 18px; }
-  .home-hero .hero-visual {
-    height: 100%;
-    min-height: 0;
-    border-radius: inherit;
-    background-image:
-      linear-gradient(to bottom, rgb(251 252 250 / 96%) 0%, rgb(251 252 250 / 91%) 43%, rgb(251 252 250 / 23%) 75%, #fbfcfa 100%),
-      url('assets/clinic-treatment-room.webp');
-    background-position: center, center 55%;
+  .home-hero { min-height: 660px; align-items: flex-start; padding: 44px 23px; }
+  .home-hero-photo { width: 100%; object-position: center 53%; }
+  .home-hero::after {
+    background:
+      linear-gradient(to bottom, #f7faf8 0%, rgb(247 250 248 / 98%) 28%, rgb(247 250 248 / 82%) 48%, rgb(247 250 248 / 12%) 79%, #fbfcfa 100%);
   }
   .home-hero .hero-copy { max-width: 100%; }
 }
