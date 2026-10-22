@@ -200,49 +200,53 @@ body { background: var(--clinic-paper); color: var(--ink); line-height: 1.55; }
   .footer { padding-inline: 0; }
 }
 
-/* Home hero: light editorial text area fading into the clinic photograph. */
+/* Home hero: dark editorial overlay matched to the supplied reference. */
 .home-hero {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 640px;
+  min-height: 690px;
   width: 100%;
   overflow: hidden;
-  padding: 70px max(32px, calc((100vw - 1220px) / 2));
-  background: #f7faf8;
+  padding: 78px max(32px, calc((100vw - 1220px) / 2));
+  border-radius: 0 0 20px 20px;
+  background: #092e32;
 }
 .home-hero-photo {
   position: absolute;
   top: 0;
   right: 0;
-  width: 69%;
+  width: 76%;
   height: 100%;
   object-fit: cover;
-  object-position: center 47%;
+  object-position: center 45%;
+  filter: grayscale(65%) saturate(70%) contrast(1.06);
 }
 .home-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, #f7faf8 0%, rgb(247 250 248 / 98%) 25%, rgb(247 250 248 / 88%) 39%, rgb(247 250 248 / 30%) 64%, transparent 80%),
-    linear-gradient(to bottom, transparent 76%, #fbfcfa 100%);
+  background: linear-gradient(90deg, #082d31 0%, rgb(8 45 49 / 98%) 23%, rgb(8 45 49 / 87%) 43%, rgb(8 45 49 / 52%) 72%, rgb(8 45 49 / 20%) 100%);
 }
-.home-hero .hero-copy { position: relative; z-index: 1; max-width: 590px; }
-.home-hero h1 { color: #394a43; }
-.home-hero h1 em { color: #317a60; }
-.home-hero p { color: #59665f; }
+.home-hero .hero-copy { position: relative; z-index: 1; max-width: 650px; }
+.home-hero .eyebrow { display: inline-flex; align-items: center; gap: 14px; padding: 0; border-radius: 0; background: none; color: #e8f0ed; font-size: 14px; font-weight: 600; }
+.home-hero .eyebrow::before { content: ""; width: 29px; height: 1px; background: #c9e7dc; }
+.home-hero h1 { margin: 38px 0 28px; max-width: 690px; color: #fff; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(59px, 5.7vw, 86px); font-weight: 400; line-height: 1.08; letter-spacing: -.048em; }
+.home-hero h1 em { color: #fff; }
+.home-hero p { max-width: 610px; color: #ecf3f1; font-size: 18px; line-height: 1.7; }
+.home-hero .button { margin-top: 24px; border-radius: 10px; background: #c5e9dc; color: #10383b; box-shadow: none; font-size: 14px; }
+.home-hero .button:hover { background: #e5f6ed; }
 
 @media (max-width: 850px) {
-  .home-hero { min-height: 590px; padding: 60px 32px; }
-  .home-hero-photo { width: 78%; }
+  .home-hero { min-height: 650px; padding: 64px 32px; }
+  .home-hero-photo { width: 85%; }
+  .home-hero h1 { font-size: clamp(54px, 7vw, 72px); }
 }
 @media (max-width: 600px) {
-  .home-hero { min-height: 660px; align-items: flex-start; padding: 44px 23px; }
-  .home-hero-photo { width: 100%; object-position: center 53%; }
-  .home-hero::after {
-    background:
-      linear-gradient(to bottom, #f7faf8 0%, rgb(247 250 248 / 98%) 28%, rgb(247 250 248 / 82%) 48%, rgb(247 250 248 / 12%) 79%, #fbfcfa 100%);
-  }
+  .home-hero { min-height: 670px; align-items: center; padding: 50px 24px; }
+  .home-hero-photo { width: 100%; object-position: center 50%; }
+  .home-hero::after { background: linear-gradient(90deg, rgb(8 45 49 / 96%), rgb(8 45 49 / 73%)), linear-gradient(to bottom, transparent 58%, rgb(8 45 49 / 62%)); }
   .home-hero .hero-copy { max-width: 100%; }
+  .home-hero h1 { margin: 28px 0 22px; font-size: clamp(46px, 11vw, 62px); }
+  .home-hero p { font-size: 15px; line-height: 1.6; }
 }
