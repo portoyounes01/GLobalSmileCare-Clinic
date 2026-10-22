@@ -4,6 +4,7 @@
 
 /* Local Figma artwork, exported from the supplied Home design preview. */
 .tooth{display:block;width:31px;height:34px;transform:none}
+.hero-visual{background-image:linear-gradient(to bottom,transparent 52%,rgb(251 252 250 / 18%) 69%,#fbfcfa 100%),url('assets/clinic-treatment-room.webp');background-position:center,center;background-repeat:no-repeat;background-size:cover}
 .hero-tags{display:none}
 .service-image{background-image:url('assets/services-treatment-figma.webp');background-position:center;background-size:cover}
 .doctor-card:nth-child(1) .doctor-photo{background-image:url('assets/doctor-1-figma.webp')}
