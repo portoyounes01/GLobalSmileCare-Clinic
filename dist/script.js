@@ -66,21 +66,15 @@ function enableScrollMotion() {
 enableScrollMotion();
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
-const menuLabels = {
-  nl: ['Menu openen', 'Menu sluiten'],
-  en: ['Open menu', 'Close menu'],
-  pt: ['Abrir menu', 'Fechar menu']
-};
-const [menuOpenLabel, menuCloseLabel] = menuLabels[document.documentElement.lang] || menuLabels.nl;
 menuButton?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? menuCloseLabel : menuOpenLabel);
+  menuButton.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
 });
 nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   nav.classList.remove('open');
   menuButton?.setAttribute('aria-expanded', 'false');
-  menuButton?.setAttribute('aria-label', menuOpenLabel);
+  menuButton?.setAttribute('aria-label', 'Menu openen');
 }));
 
 const services = {

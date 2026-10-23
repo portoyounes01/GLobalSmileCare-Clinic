@@ -8,7 +8,7 @@ class AboutPageTests(unittest.TestCase):
     def test_about_page_describes_the_real_clinic(self):
         html = (ROOT / "about.html").read_text()
         for text in ("Global Smile Care", "Antwerpen-Zuid", "Tandprotheses", "Woonzorgcentra", "Tolstraat 40"):
-            self.assertIn(text.casefold(), html.casefold())
+            self.assertIn(text, html)
 
     def test_about_page_keeps_its_design_assets_and_styles(self):
         html = (ROOT / "about.html").read_text()
