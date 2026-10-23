@@ -9,7 +9,11 @@ class DoctorsPageTests(unittest.TestCase):
         html = (ROOT / "doctors.html").read_text()
         for text in ("Global Smile Care", "Nieuwe patiënten zijn welkom", "Antwerpen-Zuid", "Tolstraat 40", "info@globalsmilecare.be"):
             self.assertIn(text, html)
-        self.assertEqual(html.count('class="doctor-profile"'), 6)
+        self.assertIn('id="dentists-title"', html)
+        self.assertIn('id="assistants-title"', html)
+        self.assertIn('Portugese achtergrond', html)
+        self.assertEqual(html.count('class="team-role-card"'), 2)
+        self.assertNotIn('class="doctor-profile"', html)
         for placeholder in ("Arlene McCoy", "Robert Fox", "Implant Specialist", "Orthodontist"):
             self.assertNotIn(placeholder, html)
 

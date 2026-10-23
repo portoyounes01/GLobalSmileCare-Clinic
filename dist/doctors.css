@@ -1,4 +1,16 @@
 /* Page-scoped styles for the Figma Doctors frame. */
+.doctors-page .team-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.doctors-page .team-role-card{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;padding:36px;border:1px solid #e2ebe7;border-radius:22px;background:#f3f8f5}
+.doctors-page .team-role-card:nth-child(2){background:#f8f6f0}
+.doctors-page .team-role-mark{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:#dcefe5;color:#277658}
+.doctors-page .team-role-card:nth-child(2) .team-role-mark{background:#eee8d6}
+.doctors-page .team-role-mark svg{width:32px;height:32px;fill:currentColor}
+.doctors-page .team-role-card .eyebrow{margin-bottom:14px}
+.doctors-page .team-role-card h2{margin:0 0 17px;font-size:clamp(27px,2.7vw,39px);line-height:1.1;letter-spacing:-.04em}
+.doctors-page .team-role-card p{max-width:48ch;margin:0;color:#53645b;font-size:16px;line-height:1.7}
+.doctors-page .team-next-step{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:25px}
+.doctors-page .team-next-step p{margin:0;font-size:15px;color:#53645b}
+@media(max-width:700px){.doctors-page .team-role-grid{grid-template-columns:1fr}.doctors-page .team-role-card{grid-template-columns:1fr;gap:18px;padding:26px}.doctors-page .team-role-mark{width:56px;height:56px}.doctors-page .team-next-step{align-items:flex-start;flex-direction:column}}
 .doctors-page{--doc-blue:#079bd5;--doc-ink:#111b2b;--doc-muted:#74808e;color:var(--doc-ink)}
 .doctors-page .nav>a.active{color:#398c6d}
 .doctors-page .doctors-intro{padding-top:46px;padding-bottom:62px}
@@ -44,3 +56,7 @@
 .doctors-page .appointment-card .form-message{font-size:11px;color:var(--doc-muted)}
 @media(max-width:850px){.doctors-page .doctors-intro{padding-top:35px;padding-bottom:45px}.doctors-page .doctors-intro-copy{grid-template-columns:1fr .8fr;gap:30px}.doctors-page .doctor-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.doctors-page .doctor-feature,.doctors-page .doctor-image{min-height:200px;height:200px}.doctors-page .doctor-feature{padding:16px}.doctors-page .doctor-feature h2{font-size:19px}.doctors-page .doctors-faq .faq-grid{gap:35px}.doctors-page .doctors-contact-grid{gap:35px}}
 @media(max-width:600px){.doctors-page .doctors-intro{padding-top:25px;padding-bottom:40px}.doctors-page .breadcrumbs{margin-bottom:18px;font-size:11px}.doctors-page .doctors-intro-copy{grid-template-columns:1fr;gap:10px;margin-bottom:25px}.doctors-page .doctors-intro h1{font-size:35px}.doctors-page .doctors-intro h1 br{display:none}.doctors-page .doctors-intro-copy>p{font-size:14px}.doctors-page .doctor-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.doctors-page .doctor-feature{grid-column:1/-1;min-height:150px;height:auto;padding:18px}.doctors-page .doctor-feature h2{max-width:270px;font-size:22px}.doctors-page .doctor-feature p{max-width:290px}.doctors-page .doctor-image{height:175px;min-height:175px;border-radius:12px}.doctors-page .doctor-caption{padding-top:7px}.doctors-page .doctor-caption h2{font-size:13px}.doctors-page .doctor-caption p{font-size:11px}.doctors-page .doctor-caption>a{width:21px;height:21px}.doctors-page .doctors-faq{padding-block:46px}.doctors-page .doctors-faq .faq-grid{grid-template-columns:1fr;gap:25px}.doctors-page .doctors-faq h2{font-size:33px}.doctors-page .doctors-faq .faq-grid>div>p{font-size:13px}.doctors-page .doctors-faq .question-box{margin-top:23px}.doctors-page .doctors-faq .faq-list details{padding:14px}.doctors-page .doctors-faq .faq-list summary{font-size:13px}.doctors-page .doctors-contact{padding-block:38px}.doctors-page .doctors-contact-grid{grid-template-columns:1fr;gap:22px}.doctors-page .contact-copy h2{font-size:34px}.doctors-page .contact-copy>p{font-size:14px}.doctors-page .contact-item{width:100%;max-width:360px;min-height:58px}.doctors-page .contact-item small{font-size:12px;line-height:1.35;white-space:normal}.doctors-page .appointment-card{padding:24px}}
+.doctors-page .team-photo{max-width:900px;margin:0 auto 36px}
+.doctors-page .team-photo img{display:block;width:100%;height:360px;object-fit:cover;object-position:center 8%;border-radius:20px}
+.doctors-page .team-photo figcaption{margin-top:10px;color:#53645b;font-size:13px}
+@media(max-width:600px){.doctors-page .team-photo{margin-bottom:28px}.doctors-page .team-photo img{height:225px;object-position:center top}}

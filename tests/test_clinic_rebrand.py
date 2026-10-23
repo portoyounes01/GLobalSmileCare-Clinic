@@ -6,13 +6,14 @@ BOOKING_URL = "https://agenda.clickdocdentist.be/short/2B4OaRgY5BLx6ZVG"
 
 
 class ClinicRebrandTests(unittest.TestCase):
-    def test_all_pages_use_the_clinic_identity_and_dutch_locale(self):
+    def test_all_pages_use_the_clinic_identity_and_correct_locale(self):
         pages = sorted(ROOT.glob("*.html"))
-        self.assertEqual(len(pages), 7)
+        self.assertEqual(len(pages), 9)
         for page in pages:
             html = page.read_text()
             with self.subTest(page=page.name):
-                self.assertIn('<html lang="nl">', html)
+                language = {"en.html": "en", "pt.html": "pt"}.get(page.name, "nl")
+                self.assertIn(f'<html lang="{language}">', html)
                 self.assertIn("Global Smile Care", html)
                 self.assertNotIn("Smile Dental Care", html)
 
